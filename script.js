@@ -7,11 +7,12 @@
     document.addEventListener("DOMContentLoaded", function () {
 
         document.querySelectorAll(".js-wa-link").forEach(function (el) {
-            const msg = el.dataset.msg && el.dataset.msg.length > 0 ? el.dataset.msg : CONFIG.defaultMessage;
-            el.href = "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(msg);
-            el.target = "_blank";
-            el.rel = "noopener noreferrer";
-        });
+        const msg = el.dataset.msg && el.dataset.msg.length > 0 ? el.dataset.msg : CONFIG.defaultMessage;
+        // Ganti wa.me menjadi api.whatsapp.com
+        el.href = "https://api.whatsapp.com/send?phone=" + CONFIG.whatsappNumber + "&text=" + encodeURIComponent(msg);
+        el.target = "_blank";
+        el.rel = "noopener noreferrer";
+    });
 
         // Animasi scroll fade-up (dimatikan otomatis kalau user set "reduce motion")
         const fadeElements = document.querySelectorAll(".fade-up");
@@ -208,13 +209,12 @@
                 if (business) {
                     message += "Bisnis: " + business + "\n";
                 }
-                // Menambahkan rating emoticon tanpa menggunakan bintang (*) untuk menghindari bug Bold WA
                 message += "Rating: " + selectedRating + "/5 " + emoText + "\n";
                 message += "Komentar: " + comment;
 
-                // Mengarahkan ke WhatsApp
+                // Mengarahkan ke WhatsApp (Ganti wa.me menjadi api.whatsapp.com)
                 window.open(
-                    "https://wa.me/" + CONFIG.whatsappNumber + "?text=" + encodeURIComponent(message),
+                    "https://api.whatsapp.com/send?phone=" + CONFIG.whatsappNumber + "&text=" + encodeURIComponent(message),
                     "_blank",
                     "noopener,noreferrer"
                 );
