@@ -128,12 +128,15 @@ header {
     line-height: 0;
 }
 
-.brand-mark:hover .site-logo { transform: scale(1.05); }
+.brand-mark:hover .site-logo {
+    transform: scale(1.06);
+}
 
 .site-logo {
-    height: 75px;
+    height: px;
     width: auto;
     display: block;
+    transition: transform 0.3s ease;
 }
 
 .nav-contact {
@@ -695,10 +698,11 @@ header {
 footer {
     background-color: var(--choc-dark);
     color: var(--bg-white);
-    padding: 60px 6% 40px;
+    padding: 70px 6% 40px;
     font-size: 14px;
     font-weight: 300;
     letter-spacing: 0.5px;
+    text-align: center;
 }
 
 .footer-inner {
@@ -708,8 +712,8 @@ footer {
 }
 
 .footer-logo {
-    height: 110px; 
-    margin: 0 auto 30px; 
+    height: 175px;
+    margin: 0 auto 30px;
     display: block;
 }
 
@@ -1332,11 +1336,6 @@ footer {
 }
 
 /* --- FOOTER SUB LINE --- */
-footer { 
-    background-color: var(--choc-dark); 
-    color: white; padding: 70px 6% 40px; 
-    text-align: center; }
-
 .footer-sub { margin-top: 4px; margin-bottom: 18px; opacity: 0.6; font-size: 13px; }
 .footer-sub a { color: inherit; text-decoration: underline; }
 
