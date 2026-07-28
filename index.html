@@ -61,9 +61,12 @@
         "@type": "OfferCatalog",
         "name": "Katalog Produk Parveen Supply",
         "itemListElement": [
-            { "@type": "OfferCatalog", "name": "Bahan Dessert" },
-            { "@type": "OfferCatalog", "name": "Cetak Edible" },
-            { "@type": "OfferCatalog", "name": "Packaging & Lainnya" }
+            { "@type": "OfferCatalog", "name": "Chocolate Compound" },
+            { "@type": "OfferCatalog", "name": "Pistachio & Nut Paste" },
+            { "@type": "OfferCatalog", "name": "Kunafa & Pastry" },
+            { "@type": "OfferCatalog", "name": "Edible Printing" },
+            { "@type": "OfferCatalog", "name": "Food Coloring" },
+            { "@type": "OfferCatalog", "name": "Packaging" }
         ]
     }
     }
@@ -150,6 +153,12 @@
             <circle cx="6.5" cy="18" r="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
             <circle cx="17" cy="18" r="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/>
         </symbol>
+        <symbol id="icon-chat" viewBox="0 0 24 24">
+            <path d="M4.5 5.5h15a1.5 1.5 0 0 1 1.5 1.5v7.5a1.5 1.5 0 0 1-1.5 1.5H9.8L5 20v-4H4.5a1.5 1.5 0 0 1-1.5-1.5V7a1.5 1.5 0 0 1 1.5-1.5Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+            <circle cx="8.3" cy="11" r="1" fill="currentColor" stroke="none"/>
+            <circle cx="12" cy="11" r="1" fill="currentColor" stroke="none"/>
+            <circle cx="15.7" cy="11" r="1" fill="currentColor" stroke="none"/>
+        </symbol>
         <symbol id="icon-tag" viewBox="0 0 24 24">
             <path d="M11 3.5h6.5a1 1 0 0 1 1 1V11a1 1 0 0 1-.3.7l-8 8a1 1 0 0 1-1.4 0l-6.2-6.2a1 1 0 0 1 0-1.4l8-8a1 1 0 0 1 .4-.6Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
             <circle cx="15" cy="7.5" r="1.2" fill="currentColor" stroke="none"/>
@@ -196,14 +205,20 @@
         <!-- HERO SECTION -->
         <section class="hero">
             <div class="hero-content fade-up">
-                <p class="section-eyebrow">Trusted B2B Supply Partner</p>
-                <h1>Elevasi Bisnis Anda dengan <span>Cokelat Premium</span></h1>
-                <p>Spesialis pasokan bahan baku cokelat berkualitas tinggi untuk industri F&B. Kami memastikan setiap gigitan produk Anda memberikan pengalaman rasa yang tak terlupakan dan konsisten.</p>
+                <p class="section-eyebrow">Trusted B2B Ingredients Partner</p>
+                <h1>Elevasi Bisnis F&amp;B Anda Dengan <span>Bahan Baku Premium</span></h1>
+                <p class="hero-lede">Chocolate Compound, Couverture, Pistachio Paste, Kunafa Pastry, dan berbagai ingredients pilihan.</p>
+                <p>Parveen Supply membantu bakery, café, restoran, chocolatier, UMKM, dan produsen mendapatkan bahan baku berkualitas dengan hasil yang konsisten, harga B2B, dan dukungan konsultasi produk.</p>
 
-                <a href="#" class="btn-wa-main js-wa-link" data-msg="Halo Admin Parveen, saya tertarik dengan katalog supply Parveen Supply.">
-                    <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-                    Mulai Konsultasi
-                </a>
+                <div class="hero-cta-row">
+                    <a href="#" class="btn-wa-main js-wa-link" data-msg="Halo Parveen, saya ingin minta pricelist B2B untuk kebutuhan bisnis saya.">
+                        <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                        Minta Pricelist B2B
+                    </a>
+                    <a href="#" class="btn-outline js-wa-link" data-msg="Halo Parveen, saya ingin konsultasi produk untuk kebutuhan bisnis saya.">
+                        Konsultasi Produk
+                    </a>
+                </div>
             </div>
 
             <div class="hero-image fade-up delay-1">
@@ -219,19 +234,19 @@
             <div class="stats-grid">
                 <div class="stat-item">
                     <p class="stat-value"><span class="stat-number" data-stat="product-count" data-target="23">23</span><span class="stat-suffix">+</span></p>
-                    <p class="stat-label">Products &amp; Services</p>
+                    <p class="stat-label">Premium Ingredients &amp; Services</p>
                 </div>
                 <div class="stat-item">
                     <p class="stat-value"><span class="stat-number" data-stat="years" data-target="11">11</span><span class="stat-suffix">+</span></p>
-                    <p class="stat-label">Years of Experience</p>
+                    <p class="stat-label">Years of Chocolate Expertise</p>
                 </div>
                 <div class="stat-item">
                     <p class="stat-value stat-text">Nationwide</p>
-                    <p class="stat-label">Delivery Coverage</p>
+                    <p class="stat-label">Delivery Across Indonesia</p>
                 </div>
                 <div class="stat-item">
-                    <p class="stat-value stat-text">Bandung's Pioneer</p>
-                    <p class="stat-label">Edible Print &amp; Chocolate Logo</p>
+                    <p class="stat-value stat-text">Business Support</p>
+                    <p class="stat-label">From UMKM to HoReCa</p>
                 </div>
             </div>
         </section>
@@ -244,26 +259,32 @@
                         <p class="section-eyebrow">Our Story</p>
                         <span class="est-badge">Est. 2015</span>
                     </div>
-                    <h2>Parveen Chocolate Supply</h2>
-                    <p>PARVEEN adalah lini B2B dari <strong>CHO-CWEET</strong>, brand spesialis <em>custom chocolate</em> yang telah melayani pelanggan B2C sejak 2015. Di tahun 2023, kami mengambil langkah besar dengan membangun PARVEEN sebagai brand tersendiri yang fokus melayani pelaku bisnis F&amp;B — mulai dari kafe, bakery, hotel, hingga restoran.</p>
-                    <p>Kami adalah salah satu pionir di Bandung untuk layanan <strong>Chocolate Transfer Image</strong>, <strong>Edible Chocolate Logo</strong>, dan <strong>Cetak Edible Paper</strong>, yang membantu bisnis Anda menghadirkan identitas brand langsung di atas cokelat maupun dessert.</p>
+                    <h2>Dari Pengalaman Cokelat, Menjadi Mitra Supply F&amp;B</h2>
+                    <p>Parveen Supply lahir dari pengalaman <strong>CHO-CWEET</strong>, brand spesialis <em>custom chocolate</em> yang telah berkarya di industri cokelat sejak 2015.</p>
+                    <p>Selama bertahun-tahun, kami memahami bahwa bisnis F&amp;B tidak hanya membutuhkan bahan baku yang lezat. Mereka membutuhkan kualitas yang konsisten, pasokan yang dapat diandalkan, harga yang sehat, dan supplier yang memahami kebutuhan produksi.</p>
+                    <p>Pada 2023, pengalaman tersebut berkembang menjadi <strong>Parveen Supply</strong>, brand B2B yang berfokus menyediakan chocolate compound, couverture, pistachio paste, kunafa pastry, edible printing, dan berbagai bahan baku pilihan untuk industri F&amp;B.</p>
+                    <p>Kami melayani kebutuhan UMKM, bakery, café, restoran, hotel, chocolatier, hingga produsen makanan di berbagai wilayah Indonesia.</p>
                     <blockquote class="about-quote">
-                        <p>Kualitas adalah prioritas utama kami — dari rasa, tekstur, hingga tampilan, konsisten di setiap pasokan.</p>
+                        <p>Kualitas bukan hanya tentang rasa, tetapi juga konsistensi hasil, efisiensi produksi, dan keandalan pada setiap pasokan.</p>
                     </blockquote>
-                    <p>Kami bekerja sama dengan produsen cokelat terkemuka dan menjaga standar produksi yang tinggi, agar setiap pasokan yang sampai ke dapur Anda selalu bisa diandalkan.</p>
+                    <p>Kami bekerja sama dengan mitra produsen terpilih dan menerapkan standar pemeriksaan produk, agar setiap bahan yang sampai ke dapur bisnis Anda aman digunakan, konsisten, dan optimal hasilnya.</p>
+                    <a href="#produk" class="btn-gold about-cta">Lihat Produk Kami →</a>
                 </div>
                 <div class="about-visual fade-up delay-1">
                     <div class="timeline-item">
                         <span class="timeline-year">2015</span>
-                        <p class="timeline-desc">Berdiri sebagai CHO-CWEET, spesialis custom chocolate untuk pelanggan B2C.</p>
+                        <p class="timeline-title">Fondasi Pengalaman</p>
+                        <p class="timeline-desc">CHO-CWEET berdiri sebagai brand spesialis custom chocolate untuk pelanggan B2C.</p>
                     </div>
                     <div class="timeline-item">
                         <span class="timeline-year">2023</span>
-                        <p class="timeline-desc">Ekspansi ke lini B2B — lahirnya Parveen Chocolate Supply.</p>
+                        <p class="timeline-title">Ekspansi B2B</p>
+                        <p class="timeline-desc">Lahirnya Parveen Supply untuk menjawab kebutuhan bahan baku cokelat, pastry, dan edible printing bagi pelaku usaha F&amp;B.</p>
                     </div>
                     <div class="timeline-item">
                         <span class="timeline-year">Kini</span>
-                        <p class="timeline-desc">Melayani kafe, bakery, hotel &amp; resto di seluruh Indonesia.</p>
+                        <p class="timeline-title">Bertumbuh Bersama Bisnis F&amp;B</p>
+                        <p class="timeline-desc">Mendukung UMKM, bakery, café, hotel, restoran, dan produsen makanan melalui bahan baku berkualitas serta layanan konsultasi produk.</p>
                     </div>
                 </div>
             </div>
@@ -277,18 +298,23 @@
             <div class="features">
                 <div class="feature-card fade-up delay-1">
                     <div class="icon-badge" aria-hidden="true"><svg><use href="#icon-award"></use></svg></div>
-                    <h3>Kualitas Terkurasi</h3>
-                    <p>Melewati proses Quality Control yang ketat. Kami memastikan profil rasa, tekstur, dan aroma cokelat selalu konsisten untuk produksi Anda.</p>
+                    <h3>Kualitas Konsisten</h3>
+                    <p>Produk diseleksi dan diperiksa untuk membantu menjaga rasa, tekstur, dan performa produksi.</p>
                 </div>
                 <div class="feature-card fade-up delay-2">
                     <div class="icon-badge" aria-hidden="true"><svg><use href="#icon-box"></use></svg></div>
-                    <h3>Skala B2B Fleksibel</h3>
-                    <p>Kapasitas pasokan yang dapat disesuaikan. Mulai dari UMKM hingga industri skala besar dengan penawaran harga yang sangat kompetitif.</p>
+                    <h3>Skala Pembelian Fleksibel</h3>
+                    <p>Mulai dari kebutuhan trial dan UMKM hingga pembelian rutin dalam jumlah besar.</p>
                 </div>
                 <div class="feature-card fade-up delay-3">
+                    <div class="icon-badge" aria-hidden="true"><svg><use href="#icon-chat"></use></svg></div>
+                    <h3>Konsultasi Produk</h3>
+                    <p>Dukungan pemilihan bahan berdasarkan aplikasi, target rasa, proses, dan anggaran bisnis.</p>
+                </div>
+                <div class="feature-card fade-up delay-4">
                     <div class="icon-badge" aria-hidden="true"><svg><use href="#icon-truck"></use></svg></div>
-                    <h3>Logistik Terjamin</h3>
-                    <p>Penanganan suhu khusus selama pengiriman. Kami garansi kondisi cokelat tetap prima hingga sampai di fasilitas produksi Anda.</p>
+                    <h3>Pengiriman Nasional</h3>
+                    <p>Pengemasan disesuaikan dengan karakter produk dan tujuan pengiriman.</p>
                 </div>
             </div>
         </section>
@@ -298,220 +324,250 @@
             <div class="section-title fade-up">
                 <p class="section-eyebrow">Our Catalog</p>
                 <h2>Bahan &amp; Perlengkapan yang Kami Sediakan</h2>
-                <a href="https://shopee.co.id/parveen_supply?page=0" target="_blank" rel="noopener noreferrer" class="tokopedia-link">Lihat katalog lengkap &amp; harga terbaru di Shopee →</a>
+                <a href="https://shopee.co.id/parveen_supply?page=0" target="_blank" rel="noopener noreferrer" class="marketplace-link">Lihat katalog lengkap &amp; harga terbaru di Shopee →</a>
             </div>
 
             <div class="filter-row fade-up">
-                <button type="button" class="filter-btn active" data-category="semua">Semua</button>
-                <button type="button" class="filter-btn" data-category="dessert">Bahan Dessert</button>
-                <button type="button" class="filter-btn" data-category="edible">Cetak Edible</button>
-                <button type="button" class="filter-btn" data-category="lainnya">Packaging &amp; Lainnya</button>
+                <button type="button" class="filter-btn active" data-category="semua">Semua Produk</button>
+                <button type="button" class="filter-btn" data-category="coklat">Chocolate Compound</button>
+                <button type="button" class="filter-btn" data-category="pistachio">Pistachio &amp; Nut Paste</button>
+                <button type="button" class="filter-btn" data-category="kunafa">Kunafa &amp; Pastry</button>
+                <button type="button" class="filter-btn" data-category="edible">Edible Printing</button>
+                <button type="button" class="filter-btn" data-category="coloring">Food Coloring</button>
+                <button type="button" class="filter-btn" data-category="packaging">Packaging</button>
             </div>
 
             <div class="product-grid">
 
-                <div class="product-card fade-up" data-category="dessert">
+                <div class="product-card fade-up" data-category="coklat">
                     <div class="product-photo">
                         <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
                         <span class="product-badge">Best Seller</span>
-                        <img src="images/produk/coklat-milk.png" alt="Milk Chocolate Compound" loading="lazy" onerror="this.remove()">
+                        <img src="images/produk/coklat-milk.png" alt="White Chocolate Compound" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Chocolate</p>
-                        <h3>Milk Chocolate Compound</h3>
-                        <p class="product-desc">Milk chocolate compound berbentuk kibble dengan rasa creamy dan tekstur mudah dilelehkan. Cocok untuk baking, dessert, dan berbagai kreasi cokelat. Kemasan 5 kg.</p>
-                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Milk Chocolate Compound.">
-                            <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-                            Tanya via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <div class="product-card fade-up" data-category="dessert">
-                    <div class="product-photo">
-                        <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
-                        <img src="images/produk/coklat-dark.png" alt="Dark Chocolate Compound" loading="lazy" onerror="this.remove()">
-                    </div>
-                    <div class="product-body">
-                        <p class="product-category">Chocolate</p>
-                        <h3>Dark Chocolate Compound</h3>
-                        <p class="product-desc">Dark chocolate compound berbentuk kibble dengan rasa creamy dan tekstur mudah dilelehkan. Cocok untuk baking, dessert, dan berbagai kreasi cokelat. Kemasan 5 kg.</p>
-                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Dark Chocolate Compound.">
-                            <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-                            Tanya via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <div class="product-card fade-up" data-category="dessert">
-                    <div class="product-photo">
-                        <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
-                        <img src="images/produk/coklat-pink.png" alt="Strawberry Chocolate Compound" loading="lazy" onerror="this.remove()">
-                    </div>
-                    <div class="product-body">
-                        <p class="product-category">Chocolate</p>
-                        <h3>Strawberry Chocolate Compound</h3>
-                        <p class="product-desc">Strawberry chocolate compound berbentuk kibble dengan rasa creamy dan tekstur mudah dilelehkan. Cocok untuk baking, dessert, dan berbagai kreasi cokelat. Kemasan 5 kg.</p>
-                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Strawberry Chocolate Compound.">
-                            <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-                            Tanya via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <div class="product-card fade-up" data-category="dessert">
-                    <div class="product-photo">
-                        <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
-                        <img src="images/produk/coklat-putih.png" alt="White Chocolate Compound" loading="lazy" onerror="this.remove()">
-                    </div>
-                    <div class="product-body">
-                        <p class="product-category">Chocolate</p>
+                        <p class="product-category">Chocolate Compound</p>
                         <h3>White Chocolate Compound</h3>
-                        <p class="product-desc">White chocolate compound berbentuk kibble dengan rasa creamy dan tekstur mudah dilelehkan. Cocok untuk baking, dessert, dan berbagai kreasi cokelat. Kemasan 5 kg.</p>
-                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal White Chocolate Compound.">
+                        <p class="product-desc">Profil rasa milky dan creamy dengan hasil akhir lembut.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Bentuk:</span> Kibble</li>
+                            <li><span class="spec-label">Kemasan:</span> 5 kg</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Moulding, coating, ganache ekonomis, dessert</li>
+                        </ul>
+                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal White Chocolate Compound 5kg.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
                         </a>
                     </div>
                 </div>
 
-                <div class="product-card fade-up" data-category="dessert">
+                <div class="product-card fade-up" data-category="coklat">
+                    <div class="product-photo">
+                        <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
+                        <img src="images/produk/coklat-pink.png" alt="Strawberry Compound" loading="lazy" onerror="this.remove()">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-category">Chocolate Compound</p>
+                        <h3>Strawberry Compound</h3>
+                        <p class="product-desc">Compound rasa stroberi dengan warna pink yang menarik.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Bentuk:</span> Kibble</li>
+                            <li><span class="spec-label">Kemasan:</span> 5 kg</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Coating, moulding, dekorasi, produk celebration</li>
+                        </ul>
+                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Strawberry Compound.">
+                            <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                            Tanya via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-card fade-up" data-category="coklat">
                     <div class="product-photo">
                         <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
                         <img src="images/produk/dark-coklat-compound-100g.webp" alt="Dark Chocolate Compound 100g Tulip Master Baker" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Bahan Dessert</p>
-                        <h3>Dark Chocolate Compound 100g Tulip Master Baker</h3>
-                        <p class="product-desc">Dark chocolate compound berkualitas dengan rasa cokelat yang kaya dan mudah dilelehkan. Cocok untuk baking, dessert, dan berbagai kreasi cokelat.</p>
-                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Dark Chocolate Compound 100g Tulip Master Baker">
+                        <p class="product-category">Chocolate Compound</p>
+                        <h3>Dark Chocolate Compound 100g</h3>
+                        <p class="product-desc">Profil kakao lebih kuat dengan tingkat kemanisan seimbang.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Bentuk:</span> Kibble</li>
+                            <li><span class="spec-label">Kemasan:</span> 100 g</li>
+                            <li><span class="spec-label">Merek:</span> Tulip Master Baker</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Cookies, brownies, coating, chocolate bar</li>
+                        </ul>
+                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Dark Chocolate Compound 100g Tulip Master Baker.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
                         </a>
                     </div>
                 </div>
 
-                <div class="product-card fade-up" data-category="dessert">
+                <div class="product-card fade-up" data-category="coklat">
                     <div class="product-photo">
                         <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
                         <img src="images/produk/dark-coklat-compound-500g.webp" alt="Dark Chocolate Compound 500g Tulip Master Baker" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Bahan Dessert</p>
-                        <h3>Dark Chocolate Compound 500g Tulip Master Baker</h3>
-                        <p class="product-desc">Dark chocolate compound berkualitas dengan rasa cokelat yang kaya dan mudah dilelehkan. Cocok untuk baking, dessert, dan berbagai kreasi cokelat.</p>
-                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Dark Chocolate Compound 500g Tulip Master Baker">
+                        <p class="product-category">Chocolate Compound</p>
+                        <h3>Dark Chocolate Compound 500g</h3>
+                        <p class="product-desc">Profil kakao lebih kuat dengan tingkat kemanisan seimbang.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Bentuk:</span> Kibble</li>
+                            <li><span class="spec-label">Kemasan:</span> 500 g</li>
+                            <li><span class="spec-label">Merek:</span> Tulip Master Baker</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Cookies, brownies, coating, chocolate bar</li>
+                        </ul>
+                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Dark Chocolate Compound 500g Tulip Master Baker.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
                         </a>
                     </div>
                 </div>
 
-                <div class="product-card fade-up" data-category="dessert">
+                <div class="product-card fade-up" data-category="coklat">
                     <div class="product-photo">
                         <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
                         <img src="images/produk/dark-coklat-compound-1kg.webp" alt="Dark Chocolate Compound 1 kg Tulip Master Baker" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Bahan Dessert</p>
-                        <h3>Dark Chocolate Compound 1 kg Tulip Master Baker</h3>
-                        <p class="product-desc">Dark chocolate compound berkualitas dengan rasa cokelat yang kaya dan mudah dilelehkan. Cocok untuk baking, dessert, dan berbagai kreasi cokelat.</p>
-                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Dark Chocolate Compound 1 kg Tulip Master Baker">
+                        <p class="product-category">Chocolate Compound</p>
+                        <h3>Dark Chocolate Compound 1kg</h3>
+                        <p class="product-desc">Profil kakao lebih kuat dengan tingkat kemanisan seimbang.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Bentuk:</span> Kibble</li>
+                            <li><span class="spec-label">Kemasan:</span> 1 kg</li>
+                            <li><span class="spec-label">Merek:</span> Tulip Master Baker</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Cookies, brownies, coating, chocolate bar</li>
+                        </ul>
+                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Dark Chocolate Compound 1 kg Tulip Master Baker.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
                         </a>
                     </div>
                 </div>
 
-                <div class="product-card fade-up" data-category="dessert">
+                <div class="product-card fade-up" data-category="coklat">
                     <div class="product-photo">
                         <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
                         <img src="images/produk/dark-coklat-compound-5kg.webp" alt="Dark Chocolate Compound 5kg Tulip Master Baker" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Bahan Dessert</p>
-                        <h3>Dark Chocolate Compound 5kg Tulip Master Baker</h3>
-                        <p class="product-desc">Dark chocolate compound berkualitas dengan rasa cokelat yang kaya dan mudah dilelehkan. Cocok untuk baking, dessert, dan berbagai kreasi cokelat dalam jumlah besar.</p>
-                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Dark Chocolate Compound 5kg Tulip Master Baker">
+                        <p class="product-category">Chocolate Compound</p>
+                        <h3>Dark Chocolate Compound 5kg</h3>
+                        <p class="product-desc">Profil kakao lebih kuat dengan tingkat kemanisan seimbang.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Bentuk:</span> Kibble</li>
+                            <li><span class="spec-label">Kemasan:</span> 5 kg</li>
+                            <li><span class="spec-label">Merek:</span> Tulip Master Baker</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Cookies, brownies, coating, chocolate bar (kebutuhan besar)</li>
+                        </ul>
+                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Dark Chocolate Compound 5kg Tulip Master Baker.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
                         </a>
                     </div>
                 </div>
 
-                <div class="product-card fade-up" data-category="dessert">
+                <div class="product-card fade-up" data-category="coklat">
                     <div class="product-photo">
                         <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
-                        <img src="images/produk/white-coklat-compound-100g.webp" alt="White Chocolate Compound Bentuk Kibble" loading="lazy" onerror="this.remove()">
+                        <img src="images/produk/white-coklat-compound-100g.webp" alt="White Chocolate Compound 100g" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Bahan Dessert</p>
-                        <h3>White Chocolate Compound 100g Bentuk Kibble</h3>
-                        <p class="product-desc">White chocolate compound berbentuk kibble dengan rasa manis, creamy, dan mudah dilelehkan. Cocok untuk baking, dessert, dan pembuatan cokelat.</p>
-                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal White Chocolate Compound 100g Bentuk Kibble">
+                        <p class="product-category">Chocolate Compound</p>
+                        <h3>White Chocolate Compound 100g</h3>
+                        <p class="product-desc">Profil rasa milky dan creamy dengan hasil akhir lembut.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Bentuk:</span> Kibble</li>
+                            <li><span class="spec-label">Kemasan:</span> 100 g</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Moulding, coating, ganache ekonomis, dessert</li>
+                        </ul>
+                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal White Chocolate Compound 100g.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
                         </a>
                     </div>
                 </div>
 
-                <div class="product-card fade-up" data-category="dessert">
+                <div class="product-card fade-up" data-category="coklat">
                     <div class="product-photo">
                         <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
-                        <img src="images/produk/white-coklat-compound-500g.webp" alt="White Chocolate Compound Bentuk Kibble" loading="lazy" onerror="this.remove()">
+                        <img src="images/produk/white-coklat-compound-500g.webp" alt="White Chocolate Compound 500g" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Bahan Dessert</p>
-                        <h3>White Chocolate Compound 500g Bentuk Kibble</h3>
-                        <p class="product-desc">White chocolate compound berbentuk kibble dengan rasa manis, creamy, dan mudah dilelehkan. Cocok untuk baking, dessert, dan pembuatan cokelat.</p>
-                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal White Chocolate Compound 500g Bentuk Kibble.">
+                        <p class="product-category">Chocolate Compound</p>
+                        <h3>White Chocolate Compound 500g</h3>
+                        <p class="product-desc">Profil rasa milky dan creamy dengan hasil akhir lembut.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Bentuk:</span> Kibble</li>
+                            <li><span class="spec-label">Kemasan:</span> 500 g</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Moulding, coating, ganache ekonomis, dessert</li>
+                        </ul>
+                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal White Chocolate Compound 500g.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
                         </a>
                     </div>
                 </div>
 
-                <div class="product-card fade-up" data-category="dessert">
+                <div class="product-card fade-up" data-category="pistachio">
                     <div class="product-photo">
                         <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
-                        <img src="images/produk/pistachio-paste-spread.jpeg" alt="Pistachio Paste Spread Premium" loading="lazy" onerror="this.remove()">
+                        <img src="images/produk/pistachio-paste-spread.jpeg" alt="Premium Pistachio Spread" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Bahan Dessert</p>
-                        <h3>Pistachio Paste Spread Premium</h3>
-                        <p class="product-desc">Pasta pistachio murni dengan tekstur lembut dan rasa autentik. Cocok untuk topping roti, cake, dessert, dan ice cream. Tersedia dalam berbagai ukuran jar.</p>
-                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Pistachio Paste Spread Premium.">
+                        <p class="product-category">Pistachio &amp; Nut Paste</p>
+                        <h3>Premium Pistachio Spread</h3>
+                        <p class="product-desc">Pasta dari pistachio asli dengan rasa kacang yang kaya dan tekstur natural dari butiran pistachio.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Bentuk:</span> Pasta creamy</li>
+                            <li><span class="spec-label">Kemasan:</span> Jar, berbagai ukuran</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Filling, topping, campuran cokelat, pastry, cake, dessert, gelato, minuman</li>
+                        </ul>
+                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Premium Pistachio Spread.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
                         </a>
                     </div>
                 </div>
 
-                <div class="product-card fade-up" data-category="dessert">
+                <div class="product-card fade-up" data-category="coloring">
                     <div class="product-photo">
                         <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
-                        <img src="images/produk/saffron-arab.jpeg" alt="Bubuk Saffron Arab Premium 100 Gram" loading="lazy" onerror="this.remove()">
+                        <img src="images/produk/saffron-arab.jpeg" alt="Strawberry Food Coloring" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Bahan Dessert</p>
-                        <h3>Bubuk Saffron Arab Premium</h3>
-                        <p class="product-desc">Bubuk saffron premium 100% murni dengan aroma dan warna alami yang kuat. Cocok untuk dessert, minuman, bakery, dan berbagai kreasi kuliner.</p>
-                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Bubuk Saffron Arab Premium.">
+                        <p class="product-category">Food Coloring</p>
+                        <h3>Strawberry Food Coloring</h3>
+                        <p class="product-desc">Pewarna makanan bernuansa merah muda untuk tampilan produk yang cerah dan konsisten.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Bentuk:</span> Bubuk</li>
+                            <li><span class="spec-label">Kemasan:</span> 100 g</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Bakery, dessert, icing, minuman (sesuai petunjuk penggunaan)</li>
+                        </ul>
+                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Strawberry Food Coloring.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
                         </a>
                     </div>
                 </div>
 
-                <div class="product-card fade-up" data-category="dessert">
+                <div class="product-card fade-up" data-category="kunafa">
                     <div class="product-photo">
                         <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
                         <img src="images/produk/kunafa.webp" alt="Ajinah Kunafa Baladi" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Bahan Dessert</p>
+                        <p class="product-category">Kunafa &amp; Pastry</p>
                         <h3>Ajinah Kunafa Baladi</h3>
-                        <p class="product-desc">Kunafa Kataifi berkualitas premium yang dibuat dari adonan Kataifi asli khas Timur Tengah, bukan bihun atau mie dan produk dikirim dalam kondisi mentah sehingga dapat diolah sesuai kebutuhan</p>
+                        <p class="product-desc">Kunafa Kataifi premium dari adonan Kataifi asli khas Timur Tengah, bukan bihun atau mie.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Bentuk:</span> Adonan Kataifi asli</li>
+                            <li><span class="spec-label">Kondisi:</span> Dikirim mentah, siap diolah</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Kunafa, dessert khas Timur Tengah</li>
+                        </ul>
                         <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Ajinah Kunafa Baladi.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
@@ -519,16 +575,18 @@
                     </div>
                 </div>
 
-
                 <div class="product-card fade-up" data-category="edible">
                     <div class="product-photo">
                         <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
                         <img src="images/produk/tinta.webp" alt="Edible Ink CMYK Food Grade" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Cetak Edible</p>
+                        <p class="product-category">Edible Printing</p>
                         <h3>Edible Ink CMYK Food Grade</h3>
-                        <p class="product-desc">Tinta makanan food grade untuk mencetak gambar, logo, dan desain pada icing paper, wafer paper, serta edible sheet. Cocok untuk dekorasi cake, cookies, cupcake, dan cokelat custom.</p>
+                        <p class="product-desc">Tinta makanan food grade untuk mencetak gambar, logo, dan desain pada icing paper, wafer paper, serta edible sheet.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Cocok untuk:</span> Dekorasi cake, cookies, cupcake, cokelat custom</li>
+                        </ul>
                         <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Edible Ink CMYK Food Grade.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
@@ -542,9 +600,14 @@
                         <img src="images/produk/icing-paper-pack.webp" alt="Icing Paper" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Cetak Edible</p>
+                        <p class="product-category">Edible Printing</p>
                         <h3>Icing Paper</h3>
-                        <p class="product-desc">Icing paper food grade dengan permukaan halus dan fleksibel untuk edible printing. Cocok untuk cake, fondant, cupcake, dan berbagai dekorasi kue. Pembelian bisa per-lembar/per-pack (ukuran A4).</p>
+                        <p class="product-desc">Icing paper food grade dengan permukaan halus dan fleksibel untuk edible printing.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Ukuran:</span> A4</li>
+                            <li><span class="spec-label">Kemasan:</span> Per-lembar / per-pack</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Cake, fondant, cupcake, dekorasi kue</li>
+                        </ul>
                         <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Kertas Edible Icing Paper.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
@@ -558,9 +621,14 @@
                         <img src="images/produk/transparent-paper.webp" alt="Transparent Paper" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Cetak Edible</p>
+                        <p class="product-category">Edible Printing</p>
                         <h3>Transparent Paper</h3>
-                        <p class="product-desc">Transparent transfer sheet food grade untuk edible printing pada cokelat dan meringue. Cocok untuk mencetak logo, gambar, dan dekorasi custom. Pembelian bisa per-lembar/per-pack (ukuran A4).</p>
+                        <p class="product-desc">Transparent transfer sheet food grade untuk edible printing pada cokelat dan meringue.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Ukuran:</span> A4</li>
+                            <li><span class="spec-label">Kemasan:</span> Per-lembar / per-pack</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Logo, gambar, dekorasi custom</li>
+                        </ul>
                         <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Transparent Paper.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
@@ -574,26 +642,15 @@
                         <img src="images/produk/wafer-paper.webp" alt="Wafer Paper" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Cetak Edible</p>
+                        <p class="product-category">Edible Printing</p>
                         <h3>Wafer Paper</h3>
-                        <p class="product-desc">Edible wafer paper food grade untuk cetak gambar dan dekorasi makanan. Cocok untuk cake, cupcake topper, bunga wafer, dessert, dan berbagai kebutuhan baking. Tersedia dalam ketebalan 0,35 mm dan 0,65 mm (A4).</p>
+                        <p class="product-desc">Edible wafer paper food grade untuk cetak gambar dan dekorasi makanan.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Ketebalan:</span> 0,35 mm &amp; 0,65 mm</li>
+                            <li><span class="spec-label">Ukuran:</span> A4</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Cake, cupcake topper, bunga wafer, dessert</li>
+                        </ul>
                         <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Wafer Paper.">
-                            <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-                            Tanya via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <div class="product-card fade-up" data-category="edible">
-                    <div class="product-photo">
-                        <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
-                        <img src="images/produk/fire-paper.webp" alt="Flash Paper Tissue Sulap" loading="lazy" onerror="this.remove()">
-                    </div>
-                    <div class="product-body">
-                        <p class="product-category">Cetak Edible</p>
-                        <h3>Flash Paper (Tissue Sulap)</h3>
-                        <p class="product-desc">Flash Paper (Tissue Sulap) berkualitas untuk kebutuhan pertunjukan sulap, fotografi, teater, dan konten kreatif. Menghasilkan efek visual yang menarik saat digunakan sesuai fungsinya.</p>
-                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Flash Paper (Tissue Sulap).">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
                         </a>
@@ -606,9 +663,13 @@
                         <img src="images/produk/edible-printing.png" alt="Cetak Edible Foto atau Logo" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Cetak Edible</p>
+                        <p class="product-category">Edible Printing</p>
                         <h3>Cetak Edible Foto/Logo</h3>
-                        <p class="product-desc">Jasa cetak edible dengan tinta food grade untuk mencetak foto, logo, dan desain pada Icing Paper (A4) &amp; Transparent Paper (A4). Cocok untuk dekorasi cake, cupcake, cookies, cokelat, serta berbagai kebutuhan acara dan branding.</p>
+                        <p class="product-desc">Jasa cetak edible dengan tinta food grade untuk mencetak foto, logo, dan desain custom Anda.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Media:</span> Icing Paper &amp; Transparent Paper (A4)</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Dekorasi cake, cupcake, cookies, cokelat, acara &amp; branding</li>
+                        </ul>
                         <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal layanan Cetak Edible Foto/Logo.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
@@ -622,41 +683,34 @@
                         <img src="images/produk/cetak-edible-wafer.webp" alt="Edible Wafer Paper" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Cetak Edible</p>
+                        <p class="product-category">Edible Printing</p>
                         <h3>Cetak Edible Wafer Paper</h3>
-                        <p class="product-desc">Jasa cetak edible pada wafer paper menggunakan tinta food grade. Cocok untuk mencetak foto, logo, dan desain custom untuk cake, cupcake, cookies, serta dekorasi bakery. Tersedia pilihan wafer paper 0,35 mm dan 0,65 mm (A4).</p>
-                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Cetak Edible Wafer Paper (Tebal &amp; Tipis).">
+                        <p class="product-desc">Jasa cetak edible pada wafer paper menggunakan tinta food grade untuk foto, logo, dan desain custom.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Ketebalan:</span> 0,35 mm &amp; 0,65 mm (A4)</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Cake, cupcake, cookies, dekorasi bakery</li>
+                        </ul>
+                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Cetak Edible Wafer Paper.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
                         </a>
                     </div>
                 </div>
 
-                <div class="product-card fade-up" data-category="edible">
-                    <div class="product-photo">
-                        <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
-                        <img src="images/produk/set-printer.webp" alt="Set Printer dan Tinta Edible Food Grade" loading="lazy" onerror="this.remove()">
-                    </div>
-                    <div class="product-body">
-                        <p class="product-category">Cetak Edible</p>
-                        <h3>Set Printer &amp; Tinta Edible Food Grade</h3>
-                        <p class="product-desc">Paket printer edible siap pakai untuk mencetak foto, logo, dan desain pada icing paper, wafer paper, serta media edible lainnya. Cocok untuk bakery, cake decoration, dan usaha edible printing.</p>
-                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Set Printer dan Tinta Edible Food Grade.">
-                            <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
-                            Tanya via WhatsApp
-                        </a>
-                    </div>
-                </div>
-
-                <div class="product-card fade-up" data-category="lainnya">
+                <div class="product-card fade-up" data-category="packaging">
                     <div class="product-photo">
                         <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
                         <img src="images/produk/kardus.webp" alt="Kardus" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Packaging &amp; Lainnya</p>
+                        <p class="product-category">Packaging</p>
                         <h3>Kardus</h3>
-                        <p class="product-desc">Kardus die cut polos ukuran 8 × 8 × 3 cm berbahan E Flute. Cocok untuk kemasan aksesoris, souvenir, dan box makanan kecil.</p>
+                        <p class="product-desc">Kardus die cut polos berbahan E Flute, rapi dan kokoh untuk kemasan produk kecil.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Ukuran:</span> 8 &times; 8 &times; 3 cm</li>
+                            <li><span class="spec-label">Bahan:</span> E Flute</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Aksesoris, souvenir, box makanan kecil</li>
+                        </ul>
                         <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Kardus.">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
@@ -664,15 +718,19 @@
                     </div>
                 </div>
 
-                <div class="product-card fade-up" data-category="lainnya">
+                <div class="product-card fade-up" data-category="packaging">
                     <div class="product-photo">
                         <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
                         <img src="images/produk/packaging-extra.webp" alt="Extra Packaging Bubble Wrap dan Kardus Tebal" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Packaging &amp; Lainnya</p>
+                        <p class="product-category">Packaging</p>
                         <h3>Extra Packaging (Bubble Wrap &amp; Kardus Tebal)</h3>
-                        <p class="product-desc">Layanan tambahan kemasan untuk memberikan perlindungan ekstra selama pengiriman. Membantu mengurangi risiko kerusakan akibat benturan, tekanan, dan proses distribusi.</p>
+                        <p class="product-desc">Layanan tambahan kemasan untuk perlindungan ekstra selama pengiriman.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Manfaat:</span> Kurangi risiko kerusakan akibat benturan &amp; tekanan</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Pengiriman jarak jauh, produk sensitif</li>
+                        </ul>
                         <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Extra Packaging (Bubble Wrap &amp; Kardus Tebal).">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
@@ -680,16 +738,39 @@
                     </div>
                 </div>
 
-                <div class="product-card fade-up" data-category="lainnya">
+                <div class="product-card fade-up" data-category="packaging">
                     <div class="product-photo">
                         <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
                         <img src="images/produk/wrap-gold-foil.webp" alt="Chocolate Wrapping Gold Foil" loading="lazy" onerror="this.remove()">
                     </div>
                     <div class="product-body">
-                        <p class="product-category">Packaging &amp; Lainnya</p>
+                        <p class="product-category">Packaging</p>
                         <h3>Chocolate Wrapping Gold Foil</h3>
-                        <p class="product-desc">Gold foil premium untuk membungkus cokelat agar tampil lebih elegan dan profesional. Cocok untuk chocolate bar, praline, souvenir, hampers, dan berbagai kebutuhan kemasan cokelat.</p>
+                        <p class="product-desc">Gold foil premium untuk membungkus cokelat agar tampil lebih elegan dan profesional.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Cocok untuk:</span> Chocolate bar, praline, souvenir, hampers</li>
+                        </ul>
                         <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Chocolate Wrapping Gold Foil.">
+                            <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
+                            Tanya via WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+                <div class="product-card fade-up" data-category="packaging">
+                    <div class="product-photo">
+                        <div class="photo-fallback" aria-hidden="true"><svg><use href="#icon-choco"></use></svg><span>Parveen Supply</span></div>
+                        <img src="images/produk/fire-paper.webp" alt="Flash Paper Tissue Sulap" loading="lazy" onerror="this.remove()">
+                    </div>
+                    <div class="product-body">
+                        <p class="product-category">Packaging</p>
+                        <h3>Flash Paper (Tissue Sulap)</h3>
+                        <p class="product-desc">Flash Paper (Tissue Sulap) berkualitas untuk pertunjukan sulap, fotografi, teater, dan konten kreatif.</p>
+                        <ul class="product-specs">
+                            <li><span class="spec-label">Efek:</span> Visual menarik sesuai fungsinya</li>
+                            <li><span class="spec-label">Cocok untuk:</span> Sulap, fotografi, teater, konten kreatif</li>
+                        </ul>
+                        <a class="product-cta js-wa-link" href="#" data-msg="Halo Parveen, saya mau tanya soal Flash Paper (Tissue Sulap).">
                             <svg aria-hidden="true"><use href="#icon-whatsapp"></use></svg>
                             Tanya via WhatsApp
                         </a>
@@ -706,7 +787,7 @@
                 <h2>Cetak Identitas Brand Langsung di Cokelat</h2>
             </div>
 
-            <p class="choice-helper fade-up"><strong>Belum yakin pilih yang mana?</strong> Edible Chocolate Logo lebih fleksibel untuk kebutuhan skala kecil (MoQ 1 pack, banyak pilihan warna tanpa biaya tambahan), sementara Transfer Image lebih hemat untuk produksi dalam jumlah besar (MoQ 100 lembar, tahan lebih lama hingga 2 tahun).</p>
+            <p class="choice-helper fade-up"><strong>Belum yakin pilih yang mana?</strong> Edible Chocolate Logo lebih fleksibel untuk kebutuhan skala kecil (MoQ 1 pack, banyak pilihan warna tanpa biaya tambahan*), sementara Transfer Image lebih hemat untuk produksi dalam jumlah besar (MoQ 100 lembar, tahan lebih lama hingga 2 tahun).</p>
 
             <div class="customization-grid">
                 <div class="custom-card fade-up delay-1">
@@ -718,7 +799,7 @@
                         <li>Ukuran 2–8 cm, bentuk custom bisa didiskusikan</li>
                         <li>MoQ 1 pack — tanpa minimum order besar</li>
                         <li>Tahan hingga 7 bulan</li>
-                        <li>Bisa banyak warna tanpa biaya tambahan</li>
+                        <li>Bisa banyak warna tanpa biaya tambahan*</li>
                     </ul>
                     <div class="color-dots" aria-hidden="true">
                         <span class="dot-white"></span>
@@ -874,6 +955,21 @@
             </div>
         </section>
 
+        <!-- CUSTOMER FEEDBACK SHOWCASE (ringkasan suka/tidak suka + daftar ulasan) -->
+        <section class="feedback-showcase-wrapper" id="feedbacks">
+            <div class="section-title fade-up">
+                <p class="section-eyebrow">Customer Reviews</p>
+                <h2>Apa Kata Pelanggan Kami</h2>
+            </div>
+
+            <div class="feedback-summary fade-up" id="feedbackSummary"></div>
+
+            <div class="feedback-list" id="feedbackList"></div>
+            <div class="feedback-more-wrap">
+            <button type="button" class="btn-feedback-more" id="feedbackMoreBtn">Lihat Feedback Lainnya</button>
+            </div>
+        </section>
+
         <!-- FEEDBACK SECTION -->
         <section class="feedback-wrapper" id="feedback">
             <div class="section-title fade-up">
@@ -944,7 +1040,7 @@
 
     <footer>
         <div class="footer-inner">
-            <img src="images/logo-parveen.png" alt="Parveen Supply" class="site-logo footer-logo" width="180" height="52">
+            <img src="images/logo-parveen.png" alt="Parveen Supply" class="footer-logo" width="180" height="52">
             <nav class="footer-nav" aria-label="Tautan footer">
                 <a href="#konten-utama">Beranda</a>
                 <a href="#tentang">Tentang Kami</a>
