@@ -129,7 +129,7 @@ header {
     align-items: center;
     line-height: 0;
     height: 100%;
-    width: 180px;
+    width: 220px;
 }
 
 .brand-mark:hover .site-logo {
@@ -1693,5 +1693,5 @@ button:focus-visible {
     .form-row { grid-template-columns: 1fr; gap: 0; }
     .feedback-form { padding: 28px 20px; }
     .star-btn svg { width: 26px; height: 26px; }
-    .site-logo { height: 46px; }
+    .site-logo { height: auto; width: 100%;}
 }
