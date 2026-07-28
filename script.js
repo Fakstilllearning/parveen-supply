@@ -161,14 +161,19 @@
             const feedbackNote = document.getElementById("feedbackNote");
             let selectedRating = 0;
             
-            // Gunakan String.fromCodePoint() dengan angka desimal
-            // Cara ini 100% kebal terhadap masalah encoding file (tidak akan jadi tanda tanya)
-            const emojisChar = [
-                String.fromCodePoint(128545) + " (Sangat Buruk)", // 😡
-                String.fromCodePoint(128577) + " (Buruk)",        // 🙁
-                String.fromCodePoint(128528) + " (Biasa Saja)",   // 😐
-                String.fromCodePoint(128522) + " (Puas)",         // 😊
-                String.fromCodePoint(128525) + " (Sangat Puas)"   // 😍
+            // Label teks polos untuk tiap rating — SENGAJA tanpa karakter emoji.
+            // Tombol emoticon di halaman (di HTML) sudah tampil benar di mobile & desktop.
+            // Tapi begitu emoji yang sama dikirim lewat URL WhatsApp (text=...), di WhatsApp
+            // Desktop karakternya kadang berubah jadi "?" — ini bug di sisi penerima (proses
+            // hand-off URL ke aplikasi desktop tidak selalu meneruskan karakter 4-byte UTF-8
+            // seperti emoji dengan benar), bukan sesuatu yang bisa kita perbaiki dari kode ini.
+            // Solusinya: jangan kirim emoji sama sekali di pesannya, cukup label teksnya saja.
+            const ratingLabels = [
+                "Sangat Buruk",
+                "Buruk",
+                "Biasa Saja",
+                "Puas",
+                "Sangat Puas"
             ];
 
             // Event listener untuk tombol emoticon
@@ -202,15 +207,22 @@
                     return;
                 }
 
-                // Membentuk Pesan WhatsApp dengan Emoticon
-                const emoText = emojisChar[selectedRating - 1];
+                // Membentuk Pesan WhatsApp
+                const ratingLabel = ratingLabels[selectedRating - 1];
                 let message = "Halo Parveen, saya ingin memberikan masukan:\n\n";
                 message += "Nama: " + name + "\n";
                 if (business) {
                     message += "Bisnis: " + business + "\n";
                 }
-                message += "Rating: " + selectedRating + "/5 " + emoText + "\n";
+                message += "Rating: " + selectedRating + "/5 (" + ratingLabel + ")\n";
                 message += "Komentar: " + comment;
+
+                fetch(FEEDBACK_SHEET_URL, {
+                    method: "POST",
+                    mode: "no-cors",
+                    headers: { "Content-Type": "text/plain;charset=utf-8" },
+                    body: JSON.stringify({ name, business, rating: selectedRating, comment }),
+                }).catch(() => {});
 
                 // Mengarahkan ke WhatsApp (Ganti wa.me menjadi api.whatsapp.com)
                 window.open(
@@ -233,3 +245,118 @@
             });
         }
     });
+
+// Customer Feedback dari Google Sheets (live + Lihat Lainnya)
+const FEEDBACK_SHEET_URL = "https://script.google.com/macros/s/AKfycbwaJSAq9u_MxLT__J7TWyJBS32QtesrZ1soc5ggN4brtbbB9TTYuWUwCkJtSHErnaxA9Q/exec";
+const FEEDBACK_BATCH_SIZE = 6;
+
+let feedbackData = [];
+let feedbackShown = FEEDBACK_BATCH_SIZE;
+
+function escapeHtml(str) {
+    return String(str).replace(/[&<>"']/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c];
+    });
+}
+
+function renderFeedbackSummary(data) {
+    const summaryEl = document.getElementById("feedbackSummary");
+    if (!summaryEl) return;
+    const total = data.length;
+    const suka = data.filter((f) => f.rating >= 4).length;
+    const tidakSuka = data.filter((f) => f.rating <= 2).length;
+    const netral = total - suka - tidakSuka;
+    const pct = (n) => (total ? (n / total) * 100 : 0);
+    const persenSuka = total ? Math.round((suka / total) * 100) : 0;
+
+    summaryEl.innerHTML =
+        '<div class="feedback-stats">' +
+            '<div class="feedback-stat feedback-stat-like"><span class="feedback-stat-emoji">😊</span><span class="feedback-stat-number">' + suka + '</span><span class="feedback-stat-label">Pelanggan Suka</span></div>' +
+            '<div class="feedback-stat feedback-stat-dislike"><span class="feedback-stat-emoji">🙁</span><span class="feedback-stat-number">' + tidakSuka + '</span><span class="feedback-stat-label">Tidak Suka</span></div>' +
+            '<div class="feedback-stat feedback-stat-total"><span class="feedback-stat-emoji">⭐</span><span class="feedback-stat-number">' + total + '</span><span class="feedback-stat-label">Total Ulasan</span></div>' +
+        '</div>' +
+        '<div class="feedback-ratio-bar" role="img" aria-label="' + persenSuka + '% pelanggan menyukai produk kami">' +
+            '<span class="ratio-segment ratio-like" style="width:' + pct(suka) + '%"></span>' +
+            '<span class="ratio-segment ratio-neutral" style="width:' + pct(netral) + '%"></span>' +
+            '<span class="ratio-segment ratio-dislike" style="width:' + pct(tidakSuka) + '%"></span>' +
+        '</div>' +
+        '<p class="feedback-ratio-caption"><strong>' + persenSuka + '%</strong> pelanggan menyukai produk &amp; layanan kami</p>';
+}
+
+function renderFeedbackList() {
+    const listEl = document.getElementById("feedbackList");
+    const moreBtn = document.getElementById("feedbackMoreBtn");
+    if (!listEl) return;
+
+    const EMOJI = { 1: "😡", 2: "🙁", 3: "😐", 4: "😊", 5: "😍" };
+    const alreadyShown = listEl.children.length;
+    const nextBatch = feedbackData.slice(alreadyShown, feedbackShown);
+
+    const cardsHtml = nextBatch.map(function (f) {
+        const sentiment = f.rating >= 4 ? "like" : f.rating <= 2 ? "dislike" : "neutral";
+        const stars = "★".repeat(f.rating) + "☆".repeat(5 - f.rating);
+        const author = escapeHtml(f.name) + (f.business ? " — " + escapeHtml(f.business) : "");
+        return (
+            '<div class="feedback-review-card sentiment-' + sentiment + ' fade-up">' +
+                '<div class="feedback-review-top">' +
+                    '<span class="feedback-review-stars" aria-hidden="true">' + stars + '</span>' +
+                    '<span class="feedback-review-emoji" aria-hidden="true">' + EMOJI[f.rating] + '</span>' +
+                '</div>' +
+                '<p class="feedback-review-comment">&ldquo;' + escapeHtml(f.comment) + '&rdquo;</p>' +
+                '<p class="feedback-review-author">' + author + '</p>' +
+            '</div>'
+        );
+    }).join("");
+
+    listEl.insertAdjacentHTML("beforeend", cardsHtml);
+
+    // Fade-up hanya untuk kartu yang BARU ditambahkan (bukan yang sudah
+    // tampil dari klik "Lihat Feedback Lainnya" sebelumnya)
+    const newFadeEls = Array.from(listEl.children).slice(alreadyShown);
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+        newFadeEls.forEach((el) => el.classList.add("visible"));
+    } else {
+        const obs = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) entry.target.classList.add("visible");
+                });
+            },
+            { threshold: 0.15, rootMargin: "0px 0px -50px 0px" }
+        );
+        newFadeEls.forEach((el) => obs.observe(el));
+    }
+
+    if (moreBtn) {
+        moreBtn.style.display = feedbackShown < feedbackData.length ? "inline-flex" : "none";
+    }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    const summaryEl = document.getElementById("feedbackSummary");
+    const listEl = document.getElementById("feedbackList");
+    if (!summaryEl || !listEl) return;
+
+    fetch(FEEDBACK_SHEET_URL)
+        .then((res) => res.json())
+        .then((data) => {
+            feedbackData = Array.isArray(data) ? data : [];
+            renderFeedbackSummary(feedbackData);
+            renderFeedbackList();
+        })
+        .catch(() => {
+            // Kalau URL belum di-setup / gagal fetch, sembunyikan seksi ini
+            // saja daripada tampil kosong/rusak
+            const wrapper = document.querySelector(".feedback-showcase-wrapper");
+            if (wrapper) wrapper.style.display = "none";
+        });
+
+    const moreBtn = document.getElementById("feedbackMoreBtn");
+    if (moreBtn) {
+        moreBtn.addEventListener("click", function () {
+            feedbackShown += FEEDBACK_BATCH_SIZE;
+            renderFeedbackList();
+        });
+    }
+});
