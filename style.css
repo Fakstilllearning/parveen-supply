@@ -125,7 +125,7 @@ header {
 
 .brand-mark {
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
     line-height: 0;
     height: 100%;
@@ -138,15 +138,15 @@ header {
 
 .site-logo{
     width:100%;
-    max-width:none;
-    height: auto;
+    max-width:180px;
+    height:auto;
     display:block;
 
-    position:static;
+    position:absolute;
     top:50%;
     left:0;
 
-    transform:none;
+    transform:translateY(-50%);
     transition:.3s;
 }
 
@@ -1715,5 +1715,4 @@ button:focus-visible {
     .feedback-form { padding: 28px 20px; }
     .star-btn svg { width: 26px; height: 26px; }
     .site-logo { height: 46px; }
-    .brand-mark{ width: 130px; }
 }
