@@ -8,7 +8,6 @@
 
         document.querySelectorAll(".js-wa-link").forEach(function (el) {
         const msg = el.dataset.msg && el.dataset.msg.length > 0 ? el.dataset.msg : CONFIG.defaultMessage;
-        // Ganti wa.me menjadi api.whatsapp.com
         el.href = "https://api.whatsapp.com/send?phone=" + CONFIG.whatsappNumber + "&text=" + encodeURIComponent(msg);
         el.target = "_blank";
         el.rel = "noopener noreferrer";
@@ -34,20 +33,51 @@
             fadeElements.forEach((el) => observer.observe(el));
         }
 
-        // Filter kategori di Katalog Produk
+        // Filter kategori di Katalog Produk (+ batas tampil 6 & tombol toggle Selengkapnya/Lebih Sedikit)
         const filterButtons = document.querySelectorAll(".filter-btn");
         const productCards = document.querySelectorAll(".product-card");
+        const productMoreBtn = document.getElementById("productMoreBtn");
+        const PRODUCT_VISIBLE_LIMIT = 8;
+        let activeCategory = "semua";
+        let isExpanded = false;
+
+        function applyProductFilter() {
+            const matches = Array.from(productCards).filter(
+                (card) => activeCategory === "semua" || card.dataset.category === activeCategory
+            );
+            const hasOverflow = matches.length > PRODUCT_VISIBLE_LIMIT;
+
+            productCards.forEach((card) => { card.style.display = "none"; });
+            const toShow = isExpanded ? matches : matches.slice(0, PRODUCT_VISIBLE_LIMIT);
+            toShow.forEach((card) => { card.style.display = ""; });
+
+            if (productMoreBtn) {
+                productMoreBtn.style.display = hasOverflow ? "inline-flex" : "none";
+                productMoreBtn.textContent = isExpanded ? "Tampilkan Lebih Sedikit" : "Lihat Produk Selengkapnya";
+            }
+        }
+
         filterButtons.forEach((btn) => {
             btn.addEventListener("click", () => {
                 filterButtons.forEach((b) => b.classList.remove("active"));
                 btn.classList.add("active");
-                const cat = btn.dataset.category;
-                productCards.forEach((card) => {
-                    const show = cat === "semua" || card.dataset.category === cat;
-                    card.style.display = show ? "" : "none";
-                });
+                activeCategory = btn.dataset.category;
+                isExpanded = false;
+                applyProductFilter();
             });
         });
+
+        if (productMoreBtn) {
+            productMoreBtn.addEventListener("click", () => {
+                isExpanded = !isExpanded;
+                applyProductFilter();
+                if (!isExpanded) {
+                    productMoreBtn.scrollIntoView({ behavior: "smooth", block: "center" });
+                }
+            });
+        }
+
+        applyProductFilter();
 
         // FAQ Accordion
         const faqItems = document.querySelectorAll(".faq-item");
@@ -161,13 +191,6 @@
             const feedbackNote = document.getElementById("feedbackNote");
             let selectedRating = 0;
             
-            // Label teks polos untuk tiap rating — SENGAJA tanpa karakter emoji.
-            // Tombol emoticon di halaman (di HTML) sudah tampil benar di mobile & desktop.
-            // Tapi begitu emoji yang sama dikirim lewat URL WhatsApp (text=...), di WhatsApp
-            // Desktop karakternya kadang berubah jadi "?" — ini bug di sisi penerima (proses
-            // hand-off URL ke aplikasi desktop tidak selalu meneruskan karakter 4-byte UTF-8
-            // seperti emoji dengan benar), bukan sesuatu yang bisa kita perbaiki dari kode ini.
-            // Solusinya: jangan kirim emoji sama sekali di pesannya, cukup label teksnya saja.
             const ratingLabels = [
                 "Sangat Buruk",
                 "Buruk",
@@ -224,7 +247,7 @@
                     body: JSON.stringify({ name, business, rating: selectedRating, comment }),
                 }).catch(() => {});
 
-                // Mengarahkan ke WhatsApp (Ganti wa.me menjadi api.whatsapp.com)
+                // Mengarahkan ke WhatsApp
                 window.open(
                     "https://api.whatsapp.com/send?phone=" + CONFIG.whatsappNumber + "&text=" + encodeURIComponent(message),
                     "_blank",
@@ -248,7 +271,7 @@
 
 // Customer Feedback dari Google Sheets (live + Lihat Lainnya)
 const FEEDBACK_SHEET_URL = "https://script.google.com/macros/s/AKfycbwaJSAq9u_MxLT__J7TWyJBS32QtesrZ1soc5ggN4brtbbB9TTYuWUwCkJtSHErnaxA9Q/exec";
-const FEEDBACK_BATCH_SIZE = 6;
+const FEEDBACK_BATCH_SIZE = 8;
 
 let feedbackData = [];
 let feedbackShown = FEEDBACK_BATCH_SIZE;
@@ -310,7 +333,7 @@ function renderFeedbackList() {
 
     listEl.insertAdjacentHTML("beforeend", cardsHtml);
 
-    // Fade-up hanya untuk kartu yang BARU ditambahkan (bukan yang sudah
+    // Fade-up hanya untuk kartu yang baru ditambahkan (bukan yang sudah
     // tampil dari klik "Lihat Feedback Lainnya" sebelumnya)
     const newFadeEls = Array.from(listEl.children).slice(alreadyShown);
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
