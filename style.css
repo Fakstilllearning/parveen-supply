@@ -5,10 +5,10 @@
     --primary-gold-dark: #9E7D40;
     --gold-gradient: linear-gradient(135deg, #EAD395 0%, #C5A059 50%, #9E7D40 100%);
 
-    --choc-dark: #2A1D18; /* Warna cokelat pekat pengganti hitam */
+    --choc-dark: #2A1D18; 
     --choc-light: #5A4438;
 
-    --bg-light: #FCFAF8; /* Putih hangat */
+    --bg-light: #FCFAF8; 
     --bg-white: #FFFFFF;
 
     --wa-green: #25D366;
@@ -129,7 +129,7 @@ header {
     align-items: center;
     line-height: 0;
     height: 100%;
-    width: 200px;
+    width: 180px;
 }
 
 .brand-mark:hover .site-logo {
@@ -138,7 +138,7 @@ header {
 
 .site-logo{
     width:100%;
-    max-width:150px;
+    max-width:180px;
     height:auto;
     display:block;
 
@@ -256,7 +256,7 @@ header {
     gap: 18px;
 }
 
-/* --- HERO IMAGE ESTETIK --- */
+/* --- HERO IMAGE --- */
 .hero-image {
     flex: 1;
     position: relative;
@@ -686,7 +686,7 @@ header {
 }
 
 /* Kartu fitur pakai lencana ikon yang sedikit lebih ramping — lingkaran
-   gold mengecil, ikon relatif lebih dominan supaya terasa lebih modern */
+   gold mengecil, ikon relatif lebih dominan */
 .feature-card .icon-badge {
     width: 54px;
     height: 54px;
@@ -1657,6 +1657,27 @@ button:focus-visible {
 
 .feedback-review-author { font-size: 13px; font-weight: 700; color: var(--choc-light); }
 
+.product-more-wrap { text-align: center; margin-top: 44px; }
+
+.btn-product-more {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 28px;
+    border-radius: 999px;
+    border: 1.5px solid var(--primary-gold);
+    background: transparent;
+    color: var(--choc-dark);
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.btn-product-more:hover { background: var(--gold-gradient); color: var(--bg-white); }
+
 @media (max-width: 768px) {
     .feedback-stats { gap: 30px; }
     .feedback-showcase-wrapper { padding: 70px 6% 40px; }
@@ -1693,5 +1714,5 @@ button:focus-visible {
     .form-row { grid-template-columns: 1fr; gap: 0; }
     .feedback-form { padding: 28px 20px; }
     .star-btn svg { width: 26px; height: 26px; }
-    .site-logo { height: auto; width: 100%;}
+    .site-logo { height: 46px; }
 }
