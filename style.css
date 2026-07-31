@@ -1714,5 +1714,5 @@ button:focus-visible {
     .form-row { grid-template-columns: 1fr; gap: 0; }
     .feedback-form { padding: 28px 20px; }
     .star-btn svg { width: 26px; height: 26px; }
-    .site-logo { height: 120px; }
+    .site-logo { height: 130px; }
 }
