@@ -137,9 +137,9 @@ header {
     }
 
 .site-logo{
-    width:100%;
-    max-width:140px;
-    height:auto;
+    width:auto;
+    max-width:none;
+    height: 46px;
     display:block;
 
     position:absolute;
